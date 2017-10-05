@@ -47,7 +47,7 @@ function decipher(validateText){
 	var decipherText = '';
 	for(var i=0; i<validateText.length; i++){
 		var formulaCesar = validateText[i].charCodeAt() - 33 % 26 //lo mismo que lo anterior pero hacia atras restando 33
-		if(formulaCesar <=90 && formulaCesar >= 65 && validateText[i] != "a" || formulaCesar <= 122 && formulaCesar >= 97){
+		if(formulaCesar <90 && formulaCesar >= 65 || formulaCesar <= 122 && formulaCesar >= 97){
 			//tuve un problema con "a" asi que parche, si cumplia todas estas condciones entonces entraba.
 			// de A-Z (65-90) y a-z (97-122)
 			decipherText += String.fromCharCode(formulaCesar);
